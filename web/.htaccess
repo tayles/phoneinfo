@@ -1,0 +1,54 @@
+# turn off indexes
+Options -Indexes
+IndexIgnore *
+DirectoryIndex index.php
+
+
+# set locale timezone
+ServerSignature Off
+AddDefaultCharset UTF-8
+DefaultLanguage en-GB
+SetEnv TZ Europe/London
+SetEnv SERVER_ADMIN webmaster@phoneinfo.local
+
+#
+## turn off ETags
+#FileETag none
+#
+#
+## set Expires headers on static content
+#<FilesMatch "\.(gif|png|jpg|js|css|swf)$">
+#    ExpiresActive On
+#    ExpiresDefault "access plus 1 month"
+#</FilesMatch>
+#
+#
+## gzip compress everything
+#<FilesMatch "\.(gif|png|jpg|js|css|swf|php)$">
+#SetOutputFilter DEFLATE
+#</FilesMatch>
+#
+#
+## custom error handlers
+#ErrorDocument 400 /index.php/error/400
+#ErrorDocument 401 /index.php/error/401
+#ErrorDocument 403 /index.php/error/403
+#ErrorDocument 404 /index.php/error/404
+#ErrorDocument 500 /index.php/error/500
+
+
+# perform rewrites
+RewriteEngine On
+
+RewriteBase /
+
+# remove www
+RewriteCond %{HTTP_HOST} ^www.(.+) [NC]
+RewriteRule ^(.*)$ http://%1/$1 [L,R=301,QSA]
+
+# do not invoke Kohana for files existing within /web
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# rewrite all other URLs
+RewriteRule ^(.*)$ index.php/$1 [PT,L,QSA]

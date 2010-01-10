@@ -1,0 +1,16 @@
+/call/america/us/from/united-kingdom/uk
+/call/france/fr/from/arab-emerates/ae
+
+/call/country/united-kingdom/gb/+44
+
+/call/town/paris/france/+44 0119
+
+
+
+
+
+
+
+
+
+

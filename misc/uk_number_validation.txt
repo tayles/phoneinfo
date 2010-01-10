@@ -1,0 +1,35 @@
+The complete pattern for programmers
+
+Need to build number formatting into a piece of software or a database? Here is a complete rundown of valid number formats in the UK in 2009. The symbol '#' can represent any digit and the list would need to be parsed in the order displayed here to work:
+
+(02#) #### ####
+(01###) ######
+(011#) ### ####
+(01#1) ### ####
+(013873) #####
+(015242) #####
+(015394) #####
+(015395) #####
+(015396) #####
+(016973) #####
+(01697) 38####
+(016974) #####
+(016977) 2###
+(016977) 3###
+(016977) 4####
+(017683) #####
+(017684) #####
+(017687) #####
+(019467) #####
+03## ### ####
+0500 ######
+05### ######
+07### ######
+08## ### ####
+09## ### ####
+
+Some further notes:
+
+    * Valid numbers are mostly 11 digits long, but 10 digit numbers are also valid if they start with 01, 0500 or 0800. There are also, exceptionally, two eight digit numbers in use: 0800 1111 and 0845 4647.
+    * Brackets () are optional and only relevant to geographic numbers starting 01 and 02 as shown above.
+    * There are, as yet, no numbers beginning 04 or 06.
